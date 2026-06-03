@@ -1,0 +1,16 @@
+# Cocos Creator generated files
+temp/
+library/
+local/
+native/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts we don't need in main branch
+# build/ is kept because web-mobile is our deployment target
