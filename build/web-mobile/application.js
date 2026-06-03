@@ -39,7 +39,7 @@ System.register([], function (_export, _context) {
           key: "start",
           value: function start() {
             return cc.game.init({
-              debugMode: false ? cc.DebugMode.INFO : cc.DebugMode.ERROR,
+              debugMode: true ? cc.DebugMode.INFO : cc.DebugMode.ERROR,
               settingsPath: this.settingsPath,
               overrideSettings: {
                 // assets: {
