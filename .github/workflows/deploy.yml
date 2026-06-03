@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'build/web-mobile/**'
+      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
 permissions:
