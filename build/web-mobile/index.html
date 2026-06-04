@@ -42,7 +42,6 @@
       <div id="Cocos3dGameContainer">
         <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
       </div>
-      <div id="errorLog" style="display:none;position:fixed;top:0;left:0;width:100%;background:rgba(255,0,0,0.9);color:#fff;padding:20px;z-index:9999;font-size:14px;text-align:left;white-space:pre-wrap;max-height:50vh;overflow:auto;"></div>
     </div>
 
 
@@ -58,24 +57,7 @@
 <script src="src/import-map.json" type="systemjs-importmap" charset="utf-8"> </script>
 
 <script>
-    var _el = document.getElementById('errorLog');
-    function showErr(msg) {
-      _el.style.display = 'block';
-      _el.textContent += msg + '\n';
-    }
-    window.onerror = function(msg, src, line, col, err) {
-      showErr('ERROR: ' + msg + ' at ' + src + ':' + line);
-      console.error(msg, src, line, err);
-    };
-    window.addEventListener('unhandledrejection', function(e) {
-      showErr('REJECTION: ' + (e.reason ? e.reason.message : ''));
-      console.error(e.reason);
-    });
-    showErr('[INIT] Loading...');
-    System.import('./index.js').then(function() {
-      showErr('[OK] System.import ./index.js success');
-    })["catch"](function(err) {
-      showErr('[FAIL] System.import ./index.js: ' + (err.message || err));
+    System.import('./index.js')["catch"](function(err) {
       console.error(err);
     });
 </script>
